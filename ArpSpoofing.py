@@ -3,7 +3,7 @@ import time
 import sys
 
 def help_message():
-    print("\nUSAGE: python3 ArpSpoofing.py <iface> <target_IP> <gateway_IP>\n") # iface="Wi-Fi" sous windows
+    print("\nUSAGE: python3 ArpSpoofing.py <iface> <target_IP> <gateway_IP>\n")
 
 if len(sys.argv) != 4:
     help_message()
