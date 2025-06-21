@@ -15,7 +15,7 @@ def get_MAC_address(IP, iface):
     response = sr1(ARP_request, iface=iface, timeout=2)   
     if response:
         print(f"[+] MAC address of {response.psrc} is {response.hwsrc}")
-        return f"{response.hwsrc}"
+        return response.hwsrc
     else:
         print(f"Unable to get MAC address of {IP}.")
         sys.exit(1)
