@@ -10,7 +10,7 @@ if len(sys.argv) != 4:
     sys.exit(1)
 
 # Sending an ARP request to obtain MAC addresses
-def get_MAC_address(IP):
+def get_MAC_address(IP, iface):
     ARP_request = ARP(pdst=IP)               
     response = sr1(ARP_request, iface=iface, timeout=2)   
     if response:
@@ -30,8 +30,8 @@ if __name__ == "__main__":
     iface = sys.argv[1]
     target_IP = sys.argv[2]
     gateway_IP = sys.argv[3]
-    target_MAC =  get_MAC_address(target_IP)   
-    gateway_MAC = get_MAC_address(gateway_IP)   
+    target_MAC =  get_MAC_address(target_IP, iface)   
+    gateway_MAC = get_MAC_address(gateway_IP, iface)   
     
     while True:
         try:
